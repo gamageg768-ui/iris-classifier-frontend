@@ -2,7 +2,8 @@
 // ====================================
 
 // CONFIGURATION - UPDATE THIS AFTER DEPLOYING TO HUGGING FACE!
-const API_URL = 'https://YOUR-USERNAME-iris-classifier.hf.space/predict';
+const API_URL = "https://gamageg-iris-classifier.hf.space/predict";
+
 
 // Sample data for quick testing
 const SAMPLES = {
