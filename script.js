@@ -1,6 +1,7 @@
 // ==============================
 // CONFIG
 // ==============================
+console.log("✅ script.js loaded");
 const API_URL = "https://gamageg-iris-classifier.hf.space/predict";
 
 // ==============================
