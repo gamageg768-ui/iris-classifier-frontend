@@ -21,7 +21,8 @@
                 <h2>📊 Flower Measurements</h2>
                 <p class="help-text">Enter the measurements in centimeters (cm)</p>
                 
-                <form id="classifierForm">
+                <!-- ✅ FIX: prevent page reload -->
+                <form id="classifierForm" onsubmit="return false;">
                     <div class="input-group">
                         <label for="sepalLength">
                             Sepal Length (cm)
@@ -98,9 +99,9 @@
                 <!-- Quick Test Buttons -->
                 <div class="quick-tests">
                     <p class="quick-tests-label">Quick Tests:</p>
-                    <button class="btn-secondary" onclick="loadSample('setosa')">Setosa Sample</button>
-                    <button class="btn-secondary" onclick="loadSample('versicolor')">Versicolor Sample</button>
-                    <button class="btn-secondary" onclick="loadSample('virginica')">Virginica Sample</button>
+                    <button type="button" class="btn-secondary" onclick="loadSample('setosa')">Setosa Sample</button>
+                    <button type="button" class="btn-secondary" onclick="loadSample('versicolor')">Versicolor Sample</button>
+                    <button type="button" class="btn-secondary" onclick="loadSample('virginica')">Virginica Sample</button>
                 </div>
             </section>
 
@@ -113,17 +114,9 @@
                     <div class="result-confidence" id="resultConfidence">-</div>
                 </div>
 
-                <div class="probabilities" id="probabilities">
-                    <!-- Dynamically populated -->
-                </div>
-
-                <div class="result-meta" id="resultMeta">
-                    <!-- Dynamically populated -->
-                </div>
-
-                <div class="species-info" id="speciesInfo">
-                    <!-- Dynamically populated -->
-                </div>
+                <div class="probabilities" id="probabilities"></div>
+                <div class="result-meta" id="resultMeta"></div>
+                <div class="species-info" id="speciesInfo"></div>
             </section>
 
             <!-- Loading Indicator -->
