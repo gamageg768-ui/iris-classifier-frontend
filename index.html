@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Iris Flower Classifier - AI Powered</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🌸 Iris Flower Classifier</h1>
+            <p class="subtitle">AI-Powered Species Identification</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Form -->
+            <section class="input-section card">
+                <h2>📊 Flower Measurements</h2>
+                <p class="help-text">Enter the measurements in centimeters (cm)</p>
+                
+                <form id="classifierForm">
+                    <div class="input-group">
+                        <label for="sepalLength">
+                            Sepal Length (cm)
+                            <span class="tooltip" title="Length of the sepal (outer petal)">ⓘ</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="sepalLength" 
+                            name="sepal_length" 
+                            step="0.1" 
+                            min="0" 
+                            max="20" 
+                            placeholder="e.g., 5.1" 
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="sepalWidth">
+                            Sepal Width (cm)
+                            <span class="tooltip" title="Width of the sepal">ⓘ</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="sepalWidth" 
+                            name="sepal_width" 
+                            step="0.1" 
+                            min="0" 
+                            max="20" 
+                            placeholder="e.g., 3.5" 
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="petalLength">
+                            Petal Length (cm)
+                            <span class="tooltip" title="Length of the petal (inner flower)">ⓘ</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="petalLength" 
+                            name="petal_length" 
+                            step="0.1" 
+                            min="0" 
+                            max="20" 
+                            placeholder="e.g., 1.4" 
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="petalWidth">
+                            Petal Width (cm)
+                            <span class="tooltip" title="Width of the petal">ⓘ</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="petalWidth" 
+                            name="petal_width" 
+                            step="0.1" 
+                            min="0" 
+                            max="20" 
+                            placeholder="e.g., 0.2" 
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="classifyBtn">
+                        🔍 Classify Flower
+                    </button>
+                </form>
+
+                <!-- Quick Test Buttons -->
+                <div class="quick-tests">
+                    <p class="quick-tests-label">Quick Tests:</p>
+                    <button class="btn-secondary" onclick="loadSample('setosa')">Setosa Sample</button>
+                    <button class="btn-secondary" onclick="loadSample('versicolor')">Versicolor Sample</button>
+                    <button class="btn-secondary" onclick="loadSample('virginica')">Virginica Sample</button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section card" id="resultsSection" style="display: none;">
+                <h2>🎯 Prediction Results</h2>
+                
+                <div class="result-main">
+                    <div class="result-species" id="resultSpecies">-</div>
+                    <div class="result-confidence" id="resultConfidence">-</div>
+                </div>
+
+                <div class="probabilities" id="probabilities">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <div class="result-meta" id="resultMeta">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <div class="species-info" id="speciesInfo">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Loading Indicator -->
+            <div class="loading" id="loadingIndicator" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing flower measurements...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <span class="error-icon">⚠️</span>
+                <div class="error-content" id="errorContent"></div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by <strong>Hugging Face</strong> (Backend) + <strong>Vercel</strong> (Frontend)</p>
+            <p class="footer-note">Free Forever • No Ads • Open Source</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
